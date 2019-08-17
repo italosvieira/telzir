@@ -1,0 +1,33 @@
+{
+  "name": "backend",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "Backend do app telzir.",
+  "repository": "https://github.com/italosvieira/telzir",
+  "author": {
+    "name": "Ítalo Da Silva Vieira",
+    "email": "italo.vieira.dev@gmail.com",
+    "url": "https://github.com/italosvieira"
+  },
+  "scripts": {
+    "start": "ts-node -r tsconfig-paths/register src/server.ts",
+    "build": "rm -rf app && tsc -p tsconfig.json",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "install-prod": "rm -rf node_modules && npm install --only=prod",
+    "start-prod": "node app/server.js"
+  },
+  "dependencies": {
+    "@nestjs/common": "^6.0.0",
+    "@nestjs/core": "^6.0.0",
+    "@nestjs/platform-express": "^6.0.0",
+    "reflect-metadata": "^0.1.12",
+    "rxjs": "^6.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "11.13.4",
+    "ts-node": "8.1.0",
+    "tsconfig-paths": "3.8.0",
+    "tslint": "5.16.0",
+    "typescript": "3.4.3"
+  }
+}
