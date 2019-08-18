@@ -5,8 +5,8 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es2017",
-    "outDir": "./app",
+    "outDir": "./dist",
     "baseUrl": "./"
   },
-  "exclude": ["node_modules", "app"]
+  "exclude": ["node_modules", "dist"]
 }
