@@ -2,10 +2,10 @@
   <span>Telzir</span>
 </mat-toolbar>
 
-<section style="display: flex; justify-content: center;">
-  <mat-card style="margin: 10px; max-width: 800px;">
+<section class="input-section">
+  <mat-card class="input-card">
     <mat-card-header>
-      <mat-card-title style="text-align: center;">Plano Fale Mais</mat-card-title>
+      <mat-card-title class="input-card-title">Plano Fale Mais</mat-card-title>
       <mat-card-subtitle>
         Com o novo produto FaleMais da Telzir o cliente adquire um plano e pode falar de graça até
         um determinado tempo (em minutos) e só paga os minutos excedentes. Os minutos
@@ -16,7 +16,7 @@
 
     <mat-divider></mat-divider>
 
-    <mat-card-content style="display: flex; flex-direction: column; margin-top: 15px;">
+    <mat-card-content class="input-card-content">
       <mat-form-field>
         <mat-label>Escolha a Origem e o Destino</mat-label>
         <mat-select [(value)]="tarifaEscolhida">
@@ -45,24 +45,24 @@
   </mat-card>
 </section>
 
-<section style="display: flex; flex-wrap: wrap; justify-content: center; text-align: center;" *ngIf="calculou">
-  <mat-card style="margin: 10px;">
+<section class="result-section" *ngIf="calculou">
+  <mat-card class="result-card">
     <mat-card-header>
-      <mat-card-title style="text-align: center; color: #3F51B5">Com Fale Mais</mat-card-title>
+      <mat-card-title class="result-text-com-fale-mais">Com Fale Mais</mat-card-title>
     </mat-card-header>
 
     <mat-divider></mat-divider>
 
-    <h1 style="color: #3F51B5">{{resultadoComFaleMais}}</h1>
+    <h1 class="result-text-com-fale-mais">{{resultadoComFaleMais}}</h1>
   </mat-card>
 
-  <mat-card style="margin: 10px;">
+  <mat-card class="result-card">
     <mat-card-header>
-      <mat-card-title style="text-align: center;color: #F44336">Sem Fale Mais</mat-card-title>
+      <mat-card-title class="result-text-sem-fale-mais">Sem Fale Mais</mat-card-title>
     </mat-card-header>
 
     <mat-divider></mat-divider>
 
-    <h1 style="color: #F44336">{{resultadoSemFaleMais}}</h1>
+    <h1 class="result-text-sem-fale-mais">{{resultadoSemFaleMais}}</h1>
   </mat-card>
 </section>

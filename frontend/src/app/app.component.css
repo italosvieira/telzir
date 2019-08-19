@@ -1,0 +1,38 @@
+.input-section {
+  display: flex;
+  justify-content: center;
+}
+
+.input-card-title {
+  text-align: center;
+}
+
+.input-card {
+  margin: 10px;
+  max-width: 800px;
+}
+
+.input-card-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.result-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.result-card {
+  margin: 10px;
+}
+
+.result-text-com-fale-mais {
+  color: #3F51B5;
+}
+
+.result-text-sem-fale-mais {
+  color: #F44336;
+}
