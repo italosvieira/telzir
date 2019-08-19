@@ -18,7 +18,7 @@ export class TarifaService {
       this.logger.error('Não foi possível consultar as tarifas no banco. Com a mensagem: ' + e.message);
 
       // Se não tiver conexão com o banco finaliza a aplicação.
-      if (e.name == 'MongoNetworkError') {
+      if (e.name === 'MongoNetworkError') {
         process.exit(1);
       }
 
@@ -36,7 +36,7 @@ export class TarifaService {
       this.logger.error('Não foi possível salvar nova tarifa no banco. Com a mensagem: ' + e.message);
 
       // Se não tiver conexão com o banco finaliza a aplicação.
-      if (e.name == 'MongoNetworkError') {
+      if (e.name === 'MongoNetworkError') {
         process.exit(1);
       }
 

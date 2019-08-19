@@ -30,3 +30,18 @@ db.tarifas.save([
     precoPorMinuto: 1.90
   }
 ])
+
+db.planos.save([
+  {
+    nome: 'Fale Mais 30',
+    consumoTotalPermitidoEmMinutos: '30'
+  },
+  {
+    nome: 'Fale Mais 60',
+    consumoTotalPermitidoEmMinutos: '60'
+  },
+  {
+    nome: 'Fale Mais 120',
+    consumoTotalPermitidoEmMinutos: '120'
+  }
+])
