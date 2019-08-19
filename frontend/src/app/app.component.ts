@@ -46,7 +46,8 @@ export class AppComponent implements OnInit {
   }
 
   calcular(): void {
-    if (!isNullOrUndefined(this.tarifaEscolhida) && !isNullOrUndefined(this.planoEscolhido) && !isNullOrUndefined(this.consumoEmMinutos)) {
+    if (!isNullOrUndefined(this.tarifaEscolhida) && !isNullOrUndefined(this.planoEscolhido) &&
+        !isNullOrUndefined(this.consumoEmMinutos) && !isNaN(Number(this.consumoEmMinutos))) {
       this.calculou = true;
       this.resultadoComFaleMais = this.calcularResultadoComFaleMais();
       this.resultadoSemFaleMais = this.calcularResultadoSemFaleMais();
