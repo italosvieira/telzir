@@ -1,0 +1,68 @@
+<mat-toolbar color="primary" style="justify-content: center;">
+  <span>Telzir</span>
+</mat-toolbar>
+
+<section style="display: flex; justify-content: center;">
+  <mat-card style="margin: 10px; max-width: 800px;">
+    <mat-card-header>
+      <mat-card-title style="text-align: center;">Plano Fale Mais</mat-card-title>
+      <mat-card-subtitle>
+        Com o novo produto FaleMais da Telzir o cliente adquire um plano e pode falar de graça até
+        um determinado tempo (em minutos) e só paga os minutos excedentes. Os minutos
+        excedentes tem um acréscimo de 10% sobre a tarifa normal do minuto. Os planos são
+        FaleMais 30 (30 minutos), FaleMais 60 (60 minutos) e FaleMais 120 (120 minutos).
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-content style="display: flex; flex-direction: column; margin-top: 15px;">
+      <mat-form-field>
+        <mat-label>Escolha a Origem e o Destino</mat-label>
+        <mat-select [(value)]="tarifaEscolhida">
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let tarifa of tarifas" [value]="tarifa">Origem: {{tarifa.origem}} | Destino: {{tarifa.destino}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Escolha o Plano</mat-label>
+        <mat-select [(value)]="planoEscolhido">
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let plano of planos" [value]="plano">{{plano.nome}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Digite o Tempo em Minutos" appNumbersOnly [(ngModel)]="consumoEmMinutos">
+      </mat-form-field>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <button mat-raised-button color="warn" (click)="limpar()">Limpar</button>
+      <button mat-raised-button color="primary" (click)="calcular()">Calcular</button>
+    </mat-card-actions>
+  </mat-card>
+</section>
+
+<section style="display: flex; flex-wrap: wrap; justify-content: center; text-align: center;" *ngIf="calculou">
+  <mat-card style="margin: 10px;">
+    <mat-card-header>
+      <mat-card-title style="text-align: center; color: #3F51B5">Com Fale Mais</mat-card-title>
+    </mat-card-header>
+
+    <mat-divider></mat-divider>
+
+    <h1 style="color: #3F51B5">{{resultadoComFaleMais}}</h1>
+  </mat-card>
+
+  <mat-card style="margin: 10px;">
+    <mat-card-header>
+      <mat-card-title style="text-align: center;color: #F44336">Sem Fale Mais</mat-card-title>
+    </mat-card-header>
+
+    <mat-divider></mat-divider>
+
+    <h1 style="color: #F44336">{{resultadoSemFaleMais}}</h1>
+  </mat-card>
+</section>
